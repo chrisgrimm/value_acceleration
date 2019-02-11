@@ -12,7 +12,7 @@ dqn = GoalQWrapper(env, 'dqn', 0)
 buffer = ReplayBuffer(100000)
 
 steps_before_train = 1000
-viz_freq = 10000
+viz_freq = 1000
 batch_size = 32
 
 s = env.reset()
