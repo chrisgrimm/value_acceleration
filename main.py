@@ -6,7 +6,7 @@ import itertools
 from visualization import visualize_all_values
 
 env = Gridworld(10)
-gpu_num = 0
+gpu_num = 1
 
 dqn = GoalQWrapper(env, 'dqn', 0)
 buffer = ReplayBuffer(100000)

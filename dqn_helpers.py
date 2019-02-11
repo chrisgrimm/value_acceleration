@@ -20,6 +20,8 @@ class GoalQWrapper:
 
 
     def train_batch_goals(self, time, s, a, sp, goals):
+        eps = 0.1
+        goals = [sp[i] if np.random.uniform(0, 1) < eps else goals[i] for i in range(len(goals))]
         s = [np.concatenate([s[i], goals[i]], axis=2) for i in range(len(s))]
         sp = [np.concatenate([sp[i], goals[i]], axis=2) for i in range(len(sp))]
         r = [1.0 if np.array_equal(sp[i], goals[i]) else -0.01 for i in range(len(sp))]
